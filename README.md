@@ -4,7 +4,7 @@ Cryptocurrencies
 
 Project Overview
 
-Accountability Accounting, a prominent investment bank, is interested in offering a new cryptocurrency investment portfolio for its customers. The company, however, is lost in the vast universe of cryptocurrencies. So, they’ve asked to create a report that includes what cryptocurrencies are on the trading market and how they could be grouped to create a classification system for this new investment.
+Accountability Accounting, a prominent investment bank, is interested in offering a new cryptocurrency investment portfolio for its customers. The company, is lost in the vast universe of cryptocurrencies. They’ve asked to create a report that includes what cryptocurrencies are on the trading market and how they could be grouped to create a classification system for this new investment.
 
 Purpose
 
@@ -16,12 +16,14 @@ Preprocessing the Data for PCA
 Reducing Data Dimensions Using PCA
 Clustering Cryptocurrencies Using K-means
 Visualizing Cryptocurrencies Results
+
 Resources
 
-Data Source: crypto_data.csv
-Software: Jupyter Notebook
 Languages: Python
 Libraries: Scikit-learn, Pandas, Plotly
+Data Source: crypto_data.csv
+Software: Jupyter Notebook
+
 Results
 
 To use unsupervised machine learning models on the data, the data needs to be processed to fit the machine learning models.
@@ -49,6 +51,7 @@ Data has been manipulated to ensure that the variance between the numbers won't 
 The unscaled value can lead to messy graphs.
 It is important to understand when to scale and normalize data.
 For example, if four columns of data are single digits, and the fifth column is in the millions, we would need to scale the fifth column to align the other four.
+
 2: Reducing Data Dimensions Using PCA
 
 Having too many features in the dataset when working with unsupervised ML can cause overfitting.
@@ -68,7 +71,7 @@ It is a statistical technique to speed up machine learning algorithms when the n
 PCA reduces the number of dimensions by transforming a large set of variables into a smaller one that contains most of the information in the original large set.
 
 The first step in PCA is to standardize these features by using the StandardScaler library.
-After the data has been standardized use PCA to reduce the number of features (argument of n_components) to get a smaller set of dimensions called principal components.
+After the data has been standardized use PCA to reduce the number of features, argument of n_components, to get a smaller set of dimensions called principal components.
 These new components are new main dimensions of variation that contain most of the information in the original dataset.
 explained_variance_ratio tells how much information can be attributed to each principal component.
 For example, the first principal component contains 72.77% of the variance and the second contains 23.03%. Together, they contain 95.80% of the information.
@@ -105,6 +108,7 @@ For 3D visualization we used 3D scatter plot with Plotly Express.
 These 3 components contain most of the information in the original large set.
 As we can see form the graph, cryptocurrency is clustered in 4 groups with similar characteristics.
 When hover over the specific element the graph shows label with Coin Name and its Algorithm.
+![3Dplot](https://user-images.githubusercontent.com/91812090/161435488-fe77e62e-5e98-4957-b3c5-32e45b908293.png)
 
 
 Figure 1: Cryptocurrencies clustered in 4 main groups.
@@ -116,6 +120,7 @@ This graph has Total Coins Supply on y-axis and Total Coins Mined on x-axis.
 From the graph we can see correlation between those two components.
 Different colors indicate different classes that crypto coins belong to.
 When hover over the specific element the graph shows label with Coin Name and its Class.
+![Interactive_table](https://user-images.githubusercontent.com/91812090/161435505-f48d2386-c59d-4f73-9b2b-b3832d45b048.png)
 
 
 Figure 2: Correlation between Total Coins Supply and Total Coins Mined.
@@ -125,7 +130,8 @@ Interactive Table
 To create interactive table, we used hvplot library.
 When clicked on the header, the values in that columns are sorted.
 This interactive table is ideal to see what tradable coins are on the market,
-Algorithms used and can be easily sorted by in ascending or descending order.
+Algorithms used and can be easily sorted by in descending or ascending order.
+![havplot_scatter_plot](https://user-images.githubusercontent.com/91812090/161435542-a227698d-9b18-4229-afc6-a3ab4f65d32c.png)
 
 
 Figure 3: Interactive table of tradable crypto coins.
